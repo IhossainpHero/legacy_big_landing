@@ -12,7 +12,9 @@ export default function ProductGrid({ products }) {
         <h2 className="text-3xl text-gray-500 font-bold text-center mb-8">
           আমাদের পণ্য
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        {/* Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product) => (
             <ProductCard
               key={product._id}
@@ -47,7 +49,7 @@ export default function ProductGrid({ products }) {
 
               {/* Right: Details */}
               <div className="flex flex-col justify-center">
-                <h3 className="text-3xl text-gray-500 font-bold mb-3">
+                <h3 className="text-3xl text-gray-700 font-bold mb-3">
                   {selectedProduct.name}
                 </h3>
                 <p className="text-gray-500 line-through text-lg">
@@ -56,9 +58,9 @@ export default function ProductGrid({ products }) {
                 <p className="text-green-600 text-4xl font-extrabold mb-4">
                   ৳{selectedProduct.offerPrice}
                 </p>
-                <p className="text-gray-700 leading-relaxed">
+                <div className="text-gray-700 leading-relaxed whitespace-pre-line">
                   {selectedProduct.details}
-                </p>
+                </div>
               </div>
             </div>
           </div>
