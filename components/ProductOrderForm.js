@@ -70,6 +70,7 @@ export default function ProductOrderForm({ products: initialProducts }) {
     setLoading(true);
     setMessage("");
 
+<<<<<<< HEAD
     // InitiateCheckout tracking (client-side)
     try {
       if (typeof window !== 'undefined' && window.fbq) {
@@ -82,6 +83,8 @@ export default function ProductOrderForm({ products: initialProducts }) {
     } catch(e){ console.warn('fbq initiatecheckout error', e); }
 
 
+=======
+>>>>>>> c7ea1f04b3d30a9ea0fe705f3e26269e3311f3d6
     if (selectedProducts.length === 0) {
       setMessage("অনুগ্রহ করে অন্তত একটি পণ্য নির্বাচন করুন।");
       setLoading(false);
@@ -112,6 +115,7 @@ export default function ProductOrderForm({ products: initialProducts }) {
       const res = await axios.post("/api/orders", orderData);
 
       if (res.data.success) {
+<<<<<<< HEAD
         try {
           const order = res.data.data;
           if (typeof window !== 'undefined' && window.fbq && order) {
@@ -123,6 +127,8 @@ export default function ProductOrderForm({ products: initialProducts }) {
           }
         } catch(e){ console.warn('fbq purchase error', e); }
 
+=======
+>>>>>>> c7ea1f04b3d30a9ea0fe705f3e26269e3311f3d6
         setMessage("✅ আপনার অর্ডার সফলভাবে জমা হয়েছে!");
         setSelectedProducts([]);
         setCustomerName("");

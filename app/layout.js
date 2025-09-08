@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import TrackingScripts from "@/components/TrackingScripts";
+=======
+>>>>>>> c7ea1f04b3d30a9ea0fe705f3e26269e3311f3d6
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -21,6 +24,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+<<<<<<< HEAD
       <body>
         <TrackingScripts />
         <noscript>
@@ -32,6 +36,11 @@ export default function RootLayout({ children }) {
           ></iframe>
         </noscript>
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+=======
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+>>>>>>> c7ea1f04b3d30a9ea0fe705f3e26269e3311f3d6
         {children}
       </body>
     </html>

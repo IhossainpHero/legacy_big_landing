@@ -1,6 +1,7 @@
 "use client";
 
 export default function ProductCard({ product, onClick }) {
+<<<<<<< HEAD
   const handleClick = (e) => {
     try {
       if (typeof window !== "undefined" && window.fbq) {
@@ -18,6 +19,11 @@ export default function ProductCard({ product, onClick }) {
   return (
     <div
       onClick={handleClick}
+=======
+  return (
+    <div
+      onClick={onClick}
+>>>>>>> c7ea1f04b3d30a9ea0fe705f3e26269e3311f3d6
       className="bg-white rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer"
     >
       {/* Image */}
