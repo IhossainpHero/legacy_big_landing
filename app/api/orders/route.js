@@ -1,10 +1,8 @@
 import connectDB from "@/app/lib/dbConnect";
 import Order from "@/app/models/Order";
 import { NextResponse } from "next/server";
-<<<<<<< HEAD
+
 import { sendPurchaseEvent } from "@/app/lib/fbCapi";
-=======
->>>>>>> c7ea1f04b3d30a9ea0fe705f3e26269e3311f3d6
 
 // POST => create new order
 export async function POST(req) {
@@ -16,14 +14,13 @@ export async function POST(req) {
 
     const newOrder = await Order.create(body);
 
-<<<<<<< HEAD
     // Send Purchase event to Facebook Conversions API (server-side)
     try {
       sendPurchaseEvent(newOrder);
-    } catch(e){ console.warn('FB CAPI send error', e); }
+    } catch (e) {
+      console.warn("FB CAPI send error", e);
+    }
 
-=======
->>>>>>> c7ea1f04b3d30a9ea0fe705f3e26269e3311f3d6
     return NextResponse.json({
       success: true,
       data: newOrder,
