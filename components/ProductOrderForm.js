@@ -70,21 +70,22 @@ export default function ProductOrderForm({ products: initialProducts }) {
     setLoading(true);
     setMessage("");
 
-<<<<<<< HEAD
     // InitiateCheckout tracking (client-side)
     try {
-      if (typeof window !== 'undefined' && window.fbq) {
-        window.fbq('track', 'InitiateCheckout', {
+      if (typeof window !== "undefined" && window.fbq) {
+        window.fbq("track", "InitiateCheckout", {
           value: total,
-          currency: 'BDT',
-          contents: selectedProducts.map(p => ({id: p._id || p.id, quantity: p.quantity || 1}))
+          currency: "BDT",
+          contents: selectedProducts.map((p) => ({
+            id: p._id || p.id,
+            quantity: p.quantity || 1,
+          })),
         });
       }
-    } catch(e){ console.warn('fbq initiatecheckout error', e); }
+    } catch (e) {
+      console.warn("fbq initiatecheckout error", e);
+    }
 
-
-=======
->>>>>>> c7ea1f04b3d30a9ea0fe705f3e26269e3311f3d6
     if (selectedProducts.length === 0) {
       setMessage("অনুগ্রহ করে অন্তত একটি পণ্য নির্বাচন করুন।");
       setLoading(false);
@@ -115,20 +116,21 @@ export default function ProductOrderForm({ products: initialProducts }) {
       const res = await axios.post("/api/orders", orderData);
 
       if (res.data.success) {
-<<<<<<< HEAD
         try {
           const order = res.data.data;
-          if (typeof window !== 'undefined' && window.fbq && order) {
-            window.fbq('track', 'Purchase', {
+          if (typeof window !== "undefined" && window.fbq && order) {
+            window.fbq("track", "Purchase", {
               value: order.totalPrice || order.totalAmount || total,
-              currency: 'BDT',
-              content_ids: order.products ? order.products.map(p=>p._id) : selectedProducts.map(p=>p._id)
+              currency: "BDT",
+              content_ids: order.products
+                ? order.products.map((p) => p._id)
+                : selectedProducts.map((p) => p._id),
             });
           }
-        } catch(e){ console.warn('fbq purchase error', e); }
+        } catch (e) {
+          console.warn("fbq purchase error", e);
+        }
 
-=======
->>>>>>> c7ea1f04b3d30a9ea0fe705f3e26269e3311f3d6
         setMessage("✅ আপনার অর্ডার সফলভাবে জমা হয়েছে!");
         setSelectedProducts([]);
         setCustomerName("");
